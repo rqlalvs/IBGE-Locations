@@ -1,16 +1,19 @@
-﻿@model IEnumerable<Locations.Classes.LocationList>
+﻿@model IEnumerable<Locations.Classes.Location>
 
 @{
-    ViewData["Title"] = "ShowAll";
+    ViewData["Title"] = "ShowRandom";
 }
 
-<h1>Todos os Estados</h1>
+<h1>ShowRandom</h1>
 
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sigla)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.nome)
@@ -25,10 +28,13 @@
                 @Html.DisplayFor(modelItem => item.id)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.sigla)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.nome)
             </td>
             <td>
-                @Html.ActionLink("Salvar", "Salvar", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Adicionar", "Adicionar", new { /* id=item.PrimaryKey */ }) |
             </td>
         </tr>
 }

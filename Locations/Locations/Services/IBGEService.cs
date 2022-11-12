@@ -22,7 +22,7 @@ namespace Locations.Services
 
         public string RequestOne(int id)
         {
-            WebRequest request = WebRequest.Create($"https://servicodados.ibge.gov.br/api/v1/localidades/estados/");
+            WebRequest request = WebRequest.Create($"https://servicodados.ibge.gov.br/api/v1/localidades/estados/{id}");
             request.Method = "GET";
             request.ContentType = "application/json";
 

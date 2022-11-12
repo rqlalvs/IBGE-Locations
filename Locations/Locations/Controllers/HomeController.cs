@@ -33,8 +33,18 @@ namespace Locations.Controllers
         public IActionResult ShowAll()
         {
             var result = this.RequestAll();
-            List<Location> myDeserializedObjList = (List<Location>)JsonConvert.DeserializeObject(result, typeof(List<Location>));
+            List<LocationList> myDeserializedObjList = (List<LocationList>)JsonConvert.DeserializeObject(result, typeof(List<LocationList>));
 
+            return this.View(myDeserializedObjList);
+        }
+
+        public IActionResult ShowRandom()
+        {
+            Random rnd = new Random();
+            int id = rnd.Next(10, 54);
+            var reqrandom = _ibgeservice.RequestOne(id);
+
+            List<Location> myDeserializedObjList = (List<Location>)JsonConvert.DeserializeObject(reqrandom, typeof(List<Location>));
             return this.View(myDeserializedObjList);
         }
 
@@ -50,15 +60,12 @@ namespace Locations.Controllers
             return reqall;
         }
 
-        public string RequestOne()
+        public string RequestOne(int id)
         {
-            Random rd = new Random();
-            int rand_num = rd.Next(100, 200);
+            var reqone = _ibgeservice.RequestOne(id);
 
-
-            var ldto = new LocationDTO();
-            var reqone = _ibgeservice.RequestOne(rand_num);
             return reqone;
         }
+      
     }
 }

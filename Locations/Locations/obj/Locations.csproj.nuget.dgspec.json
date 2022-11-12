@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\study\\interview\\Locations\\Locations\\Locations\\Locations.csproj": {}
+    "D:\\study\\interview\\Locations\\IBGE-Locations\\Locations\\Locations\\Locations.csproj": {}
   },
   "projects": {
-    "D:\\study\\interview\\Locations\\Locations\\Locations\\Locations.csproj": {
+    "D:\\study\\interview\\Locations\\IBGE-Locations\\Locations\\Locations\\Locations.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\study\\interview\\Locations\\Locations\\Locations\\Locations.csproj",
+        "projectUniqueName": "D:\\study\\interview\\Locations\\IBGE-Locations\\Locations\\Locations\\Locations.csproj",
         "projectName": "Locations",
-        "projectPath": "D:\\study\\interview\\Locations\\Locations\\Locations\\Locations.csproj",
+        "projectPath": "D:\\study\\interview\\Locations\\IBGE-Locations\\Locations\\Locations\\Locations.csproj",
         "packagesPath": "C:\\Users\\Raquel-PC\\.nuget\\packages\\",
-        "outputPath": "D:\\study\\interview\\Locations\\Locations\\Locations\\obj\\",
+        "outputPath": "D:\\study\\interview\\Locations\\IBGE-Locations\\Locations\\Locations\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Raquel-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,21 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.10, )"
+            },
+            "MySql.Data.EntityFramework": {
+              "target": "Package",
+              "version": "[8.0.31, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
