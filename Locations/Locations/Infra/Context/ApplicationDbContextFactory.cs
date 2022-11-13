@@ -9,7 +9,7 @@ namespace Locations.Infra.Context
     {
         public ApplicationDbContext CreateDbContext(string[] args)
         {
-            var dbconn = System.Environment.GetEnvironmentVariable("DBCONNECTION_LOC", EnvironmentVariableTarget.Machine);
+            var dbconn = System.Environment.GetEnvironmentVariable("DB_CONN_LOCATIONS-WPORT", EnvironmentVariableTarget.Machine);
 
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
             optionsBuilder.UseMySql(dbconn,

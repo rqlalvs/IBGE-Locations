@@ -4,7 +4,6 @@ using Locations.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-Environment.SetEnvironmentVariable("Test1", "Value1");
 var dbconn = System.Environment.GetEnvironmentVariable("DB_CONN_LOCATIONS", EnvironmentVariableTarget.Machine);
 
 builder.Services.AddTransient<IIBGEService, IBGEService>();
