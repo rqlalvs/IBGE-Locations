@@ -1,7 +1,7 @@
 ﻿namespace Locations.Classes
 {
 
-    public class Location
+    public class Location 
     {
         public int id { get; set; }
         public string sigla { get; set; }

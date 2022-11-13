@@ -1,4 +1,5 @@
 ﻿using Locations.Classes;
+using Locations.Context;
 using Locations.DTO;
 using Locations.Models;
 using Locations.Services.Interfaces;
@@ -12,11 +13,12 @@ namespace Locations.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IIBGEService _ibgeservice;
-
-        public HomeController(ILogger<HomeController> logger, IIBGEService ibgeservice)
+        private readonly ApplicationDbContext _context;
+        public HomeController(ILogger<HomeController> logger, IIBGEService ibgeservice, ApplicationDbContext context)
         {
             _logger = logger;
             _ibgeservice = ibgeservice;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -66,6 +68,5 @@ namespace Locations.Controllers
 
             return reqone;
         }
-      
     }
 }

@@ -1,26 +1,18 @@
 ﻿using Locations.Services;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Locations.DTO
 {
+    [Table("DISTRITO")]
     public class LocationDTO
     {
-        public int id { get; set; }
-        public string sigla { get; set; }
-        public string nome { get; set; }
-        public Regiao regiao { get; set; }
-    }
-
-    public class Regiao
-    {
-        public int id { get; set; }
-        public string sigla { get; set; }
-        public string nome { get; set; }
-    }
-
-    public class Root
-    {
-        public List<LocationDTO> location { get; set; }
+        [Column("ID")]
+        public int ID { get; set; }
+        [Column("Sigla")]
+        public string Sigla { get; set; }
+        [Column("Nome")]
+        public string Nome { get; set; }
     }
 
 }
