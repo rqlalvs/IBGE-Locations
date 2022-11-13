@@ -10,7 +10,8 @@ namespace Locations.Infra.Context
         public ApplicationDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            optionsBuilder.UseSqlServer("server=locations.cpdb1zmgllha.us-east-1.rds.amazonaws.com:3306;initial catalog=DB_LOCALIDADES;uid=admin;pwd=FPqRA1TrltfFLPafC97X");
+            optionsBuilder.UseMySql("server=locations.cpdb1zmgllha.us-east-1.rds.amazonaws.com:3306;initial catalog=DB_LOCALIDADES;uid=admin;pwd=FPqRA1TrltfFLPafC97X",
+        Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.28-mysql"));
 
             return new ApplicationDbContext(optionsBuilder.Options);
         }
