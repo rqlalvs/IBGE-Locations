@@ -40,22 +40,6 @@ namespace Locations.Controllers
             return this.View(myDeserializedObjList);
         }
 
-        public IActionResult ShowRandom()
-        {
-            Random rnd = new Random();
-            int id = rnd.Next(10, 54);
-            var reqrandom = _ibgeservice.RequestOne(id);
-
-            List<Location> myDeserializedObjList = (List<Location>)JsonConvert.DeserializeObject(reqrandom, typeof(List<Location>));
-            return this.View(myDeserializedObjList);
-        }
-
-        public IActionResult ShowDB()
-        {
-            //consulta no DB oq ta salvo
-            return this.View();
-        }
-
         public string RequestAll()
         {
             var reqall = _ibgeservice.RequestAll();

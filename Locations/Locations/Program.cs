@@ -4,16 +4,17 @@ using Locations.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+Environment.SetEnvironmentVariable("Test1", "Value1");
+var dbconn = System.Environment.GetEnvironmentVariable("DB_CONN_LOCATIONS", EnvironmentVariableTarget.Machine);
 
 builder.Services.AddTransient<IIBGEService, IBGEService>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-var app = builder.Build();
-
 builder.Services.AddDbContext<ApplicationDbContext>
     (options => options.UseMySql(
-        "server=locations.cpdb1zmgllha.us-east-1.rds.amazonaws.com:3306;initial catalog=DB_LOCALIDADES;uid=admin;pwd=FPqRA1TrltfFLPafC97X",
-        Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.28-mysql")));
+              dbconn,
+        Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.28-mysql"), options => options.EnableRetryOnFailure()));
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
