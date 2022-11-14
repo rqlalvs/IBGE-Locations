@@ -7,3 +7,5 @@ Variaveis de ambiente (do sistema):
 DB_CONN_LOCATIONS - String de conexao no banco COM PORT 
 
 DB_CONN_LOCATIONS-WPORT - String de conexao no banco SEM PORT 
+
+*banco hospedado e configurado no RDS da Amazon*
